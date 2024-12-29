@@ -1,3 +1,7 @@
+// components
+import FirstComponent from './components/FirstComponent'
+
+// CSS
 import './App.css'
 
 function App() {
@@ -5,6 +9,7 @@ function App() {
     <>
       <h1>Hello World</h1>
       <h2>Atividade da Aula</h2>
+      <FirstComponent />
     </>
   )
 }
