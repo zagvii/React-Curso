@@ -1,5 +1,6 @@
 import './App.css'
-import ListRender from './components/ListRender'
+import ConditionalRender from './components/ConditionalRender'
+//import ListRender from './components/ListRender'
 //import ManageData from './components/ManageData'
 // import Gatinho from './assets/gatinho.jpg'
 
@@ -15,8 +16,9 @@ function App() {
       <div>
         <img src={Gatinho} alt="Gatinho" />
       </div> 
-      <ManageData />*/}
-      <ListRender />
+      <ManageData />
+      <ListRender />*/}
+      <ConditionalRender />
     </>
   )
 }
