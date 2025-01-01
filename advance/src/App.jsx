@@ -1,5 +1,6 @@
 import './App.css'
-import ManageData from './components/ManageData'
+import ListRender from './components/ListRender'
+//import ManageData from './components/ManageData'
 // import Gatinho from './assets/gatinho.jpg'
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
         -- Imagem na pasta assets - Precisa importar como se fosse um componente
       <div>
         <img src={Gatinho} alt="Gatinho" />
-      </div> */}
-      <ManageData />
+      </div> 
+      <ManageData />*/}
+      <ListRender />
     </>
   )
 }
