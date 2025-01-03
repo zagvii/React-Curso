@@ -1,8 +1,9 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
-import Message from './components/Message';
-import ChangeMessageState from './components/ChangeMessageState';
 
+import UsersDetail from './components/usersDetail'
+// import Message from './components/Message';
+// import ChangeMessageState from './components/ChangeMessageState';
 // import ExecuteFunction from './components/ExecuteFunction'
 // import Container from './components/Container'
 // import CarDetails from './components/CarDetails'
@@ -22,13 +23,19 @@ function App() {
 
   function showMessage() {
     console.log("Mensagem do componente pai!")
-  } */
+  } 
 
   const [message, setMessage] = useState ("");
 
   const handleMessage = (msg) => {
     setMessage(msg)
-  }
+  } */
+
+  const users = [
+    {id: 1, name: "Maria", age: 23, profession: "Professora"},
+    {id: 2, name: "Lucas", age: 12, profession: "Estudante"},
+    {id: 3, name: "Matheus", age: 34, profession: "Caminhoneiro"},
+  ]
 
   return (
     <>
@@ -61,12 +68,15 @@ function App() {
       </Container>
       -- Funções no prop 
       <ExecuteFunction myFunction={showMessage}/>
-      */}
-      {/* State Lift */}
-        {/* Componente que consome o dado */}
+      -- State Lift 
+        -- Componente que consome o dado 
       <Message msg={message} />
-        {/* Componente que altera o dado */}
+        -- Componente que altera o dado 
       <ChangeMessageState handleMessage={handleMessage} />
+      */}
+      {users.map((user) => (
+        <UsersDetail key={user.id} name={user.name} age={user.age} profession={user.profession} />
+      ))}
     </>
   )
 }
