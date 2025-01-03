@@ -1,6 +1,7 @@
 import './App.css'
 
-import Container from './components/Container'
+import ExecuteFunction from './components/ExecuteFunction'
+// import Container from './components/Container'
 // import CarDetails from './components/CarDetails'
 // import ConditionalRender from './components/ConditionalRender'
 // import ShowUserName from './components/ShowUserName'
@@ -16,10 +17,15 @@ function App() {
     {id: 3, brand: "Tesla", color: "Roxo", isNew: false},
   ]*/
 
+  function showMessage() {
+    console.log("Mensagem do componente pai!")
+  } 
+
   return (
     <>
       <h1>Avançando em React</h1>
-      {/* -- Imagem na pasta public
+      {/*
+      -- Imagem na pasta public
       <div>
         <img src="/cachorrinho.jpg" alt="Cachorrinho" />
       </div>
@@ -40,10 +46,13 @@ function App() {
       -- Renderizando lista em um componente 
       {cars.map((car) => (
         <CarDetails key={car.id} brand={car.brand} color={car.color} km={car.km} />
-      ))}*/}
+      ))}
       <Container>
         <p>Esse é o conteúdo do container.</p>
       </Container>
+      */}
+      {/* Funções no prop */}
+      <ExecuteFunction myFunction={showMessage}/>
     </>
   )
 }
