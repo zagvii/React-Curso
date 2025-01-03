@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import './App.css'
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
-import ExecuteFunction from './components/ExecuteFunction'
+// import ExecuteFunction from './components/ExecuteFunction'
 // import Container from './components/Container'
 // import CarDetails from './components/CarDetails'
 // import ConditionalRender from './components/ConditionalRender'
@@ -15,11 +18,17 @@ function App() {
     {id: 1, brand: "Ferrari", color: "Amarelo", isNew: true},
     {id: 2, brand: "BYD", color: "Verde", isNew: false},
     {id: 3, brand: "Tesla", color: "Roxo", isNew: false},
-  ]*/
+  ]
 
   function showMessage() {
     console.log("Mensagem do componente pai!")
-  } 
+  } */
+
+  const [message, setMessage] = useState ("");
+
+  const handleMessage = (msg) => {
+    setMessage(msg)
+  }
 
   return (
     <>
@@ -50,9 +59,14 @@ function App() {
       <Container>
         <p>Esse é o conteúdo do container.</p>
       </Container>
-      */}
-      {/* Funções no prop */}
+      -- Funções no prop 
       <ExecuteFunction myFunction={showMessage}/>
+      */}
+      {/* State Lift */}
+        {/* Componente que consome o dado */}
+      <Message msg={message} />
+        {/* Componente que altera o dado */}
+      <ChangeMessageState handleMessage={handleMessage} />
     </>
   )
 }
