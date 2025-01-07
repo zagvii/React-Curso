@@ -1,7 +1,9 @@
 // import { useState } from 'react'
 import './App.css'
+import MyComponent from './components/MyComponent'
+import Title from './components/Title';
 
-import UsersDetail from './components/usersDetail'
+// import UsersDetail from './components/usersDetail'
 // import Message from './components/Message';
 // import ChangeMessageState from './components/ChangeMessageState';
 // import ExecuteFunction from './components/ExecuteFunction'
@@ -29,18 +31,19 @@ function App() {
 
   const handleMessage = (msg) => {
     setMessage(msg)
-  } */
+  } 
 
   const users = [
     {id: 1, name: "Maria", age: 23, profession: "Professora"},
     {id: 2, name: "Lucas", age: 12, profession: "Estudante"},
     {id: 3, name: "Matheus", age: 34, profession: "Caminhoneiro"},
-  ]
+  ] */
+
+    const x = 1;
 
   return (
     <>
-      <h1>Avançando em React</h1>
-      {/*
+      {/*<h1>Avançando em React</h1>
       -- Imagem na pasta public
       <div>
         <img src="/cachorrinho.jpg" alt="Cachorrinho" />
@@ -73,10 +76,19 @@ function App() {
       <Message msg={message} />
         -- Componente que altera o dado 
       <ChangeMessageState handleMessage={handleMessage} />
-      */}
       {users.map((user) => (
         <UsersDetail key={user.id} name={user.name} age={user.age} profession={user.profession} />
-      ))}
+      ))} */}
+      <h1>CSS - Global</h1>
+      <MyComponent />
+      <p>Parágrafo fora do componente - Global</p>
+      <p style={{color: "blue", padding: "25px", borderRadius: "5px"}}>Elemento estilizado com CSS inline</p>
+      <p style={ x > 1 ? {color: "yellow"} : {color: "green"}}>Elemento estilizado com CSS inline dinâmicamente (IF-ELSE)</p>
+      <p style={ x <= 1 ? {color: "yellow"} : null}>Elemento estilizado com CSS inline dinâmicamente (IF-ELSE)</p>
+      <p className={ x > 1 ? "yellowBackground" : "greenBackground"}>Classes Dinâmicas (IF-ELSE)</p>
+      <p className={ x <= 1 ? "yellowBackground" : "greenBackground"}>Classes Dinâmicas (IF-ELSE)</p>
+      {/* CSS Modules*/}
+      <Title />
     </>
   )
 }
