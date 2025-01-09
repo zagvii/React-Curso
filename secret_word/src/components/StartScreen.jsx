@@ -1,9 +1,9 @@
 import './StartScreen.css'
 
-const StartScreen = () => {
+const StartScreen = ({startGame}) => {
   return (
     <>
-        <button className="start-button">Play</button>
+      <button className="action-button" onClick={startGame}>Play</button>
     </>
   )
 }

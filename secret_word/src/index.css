@@ -12,3 +12,21 @@ body {
 h1 {
     font-weight: 700;
 }
+
+.action-button{
+    margin-top: 2rem;
+    color: #fffcf7;
+    background-color: #3f3f3f;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .4s;
+    font-weight: 700;
+    font-family: "Quicksand", serif !important;
+}
+
+.action-button:hover{
+    background-color: #000000;
+}
