@@ -1,0 +1,14 @@
+body {
+    background-color: #fffcf7;
+    color: #2b2b2b;
+    font-family: "Quicksand", serif !important;
+    margin: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+}
+
+h1 {
+    font-weight: 700;
+}
