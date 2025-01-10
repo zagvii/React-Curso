@@ -18,6 +18,8 @@ const stages = [
   {id: 3, name: 'end'}
 ]
 
+const guessesQtd = 3;
+
 function App() {
 
   const [gameStage, setGameStage] = useState(stages[0].name);
@@ -29,7 +31,7 @@ function App() {
 
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
-  const [guesses, setGuesses] = useState(3);
+  const [guesses, setGuesses] = useState(guessesQtd);
   const [score, setScore] = useState(0);
 
   const pickWordAndCategory = () => {
@@ -64,12 +66,54 @@ function App() {
   }
 
   // Process letter input
-  const verifyLetter = () => {
-    setGameStage(stages[2].name);
+  const verifyLetter = (letter) => {
+    console.log(letter)
+
+    const letterLowerCase = letter.toLowerCase();
+
+    // Check if letter has been already used
+    if (guessedLetters.includes(letterLowerCase) || wrongLetters.includes(letterLowerCase)) {
+      return;
+    }
+
+    if (letters.includes(letterLowerCase)) {
+      setGuessedLetters((actualGuessedLetter) => [
+        ...actualGuessedLetter,
+        letterLowerCase
+      ]);
+    } else {
+      setWrongLetters((actualWrongLetter) => [
+        ...actualWrongLetter,
+        letterLowerCase
+      ]);
+      setGuesses((actualGuesses) => actualGuesses - 1)
+    }
+  }
+
+  // Monitor any data
+  useEffect(() => {
+    if (guesses <= 0) {
+      clearAllStates();
+      setGameStage(stages[2].name);
+    }
+  }, [guesses])
+
+  const clearAllStates = () => {
+    setPickedWord("");
+    setPickedCategory("");
+    setLetters([]);
+    setGuessedLetters([]);
+    setWrongLetters([]);
+    setGuesses(guessesQtd);
+  }
+
+  const clearScores = () => {
+    setScore(0);
   }
 
   // Retry game
   const retry = () => {
+    clearScores();
     setGameStage(stages[0].name);
   }
 
