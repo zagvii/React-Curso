@@ -18,3 +18,8 @@ nav a:hover {
     background-color: #000;
     color: #878787;
 }
+
+.ativo {
+    background-color: #262222;
+    color: #878787;
+}
